@@ -38,65 +38,62 @@ box message = "Hello, World!" end
 boxes myArray = [1, 2, 3] end
 
 # Access and update arrays
-myArray[1] = 5 end
-print(myArray[1]) # Outputs: 5
-Control Flow
+    myArray[1] = 5 end
+    print(myArray[1]) # Outputs: 5
+
 if Statements
-inboxes
-Copiar código
-box x = 5 end
-
 # Normal if statement
-if x > 0 doIt
+    if x > 0 doIt
     print("x is positive!")
-end
+    end
 
-while and for Loops
-inboxes
-Copiar código
-box counter = 0 end
+    while and for Loops
+    inboxes
+    Copiar código
+    box counter = 0 end
 
 # Normal while loop
-while counter < 5 doIt
-    print(counter)
-    counter = counter + 1 end
-end
+    while counter < 5 doIt
+        print(counter)
+        counter = counter + 1 end
+    end
+
 
 # for Loop
-box x = 5 end
+    box x = 5 end
 
-for i = 0 to x doIt
-print(x)
-end
+    for i = 0 to x doIt
+    print(x)
+    end
 
 # Input a value from the user
-box name = "" end
-input("name", "Enter your name: ")
-print("Hello, ", name, "!")
+    box name = "" end
+    input("name", "Enter your name: ")
+    print("Hello, ", name, "!")
+
+
 
 Logical and Comparison Operators
-inboxes
-Copiar código
 # Logical operators
-if x > 5 and x < 10 doIt
-    print("x is between 5 and 10.")
-end
+    if x > 5 and x < 10 doIt
+        print("x is between 5 and 10.")
+    end
 
-if x < 5 or x > 10 doIt
-    print("x is outside the range 5-10.")
-end
+    if x < 5 or x > 10 doIt
+        print("x is outside the range 5-10.")
+    end
+
+
 Functions
-inboxes
-Copiar código
 
 # Define a function
-function addNumbers(a, b) doIt
-    box result = a + b end
-    print(result)
-end
+    function addNumbers(a, b) doIt
+        box result = a + b end
+        print(result)
+    end
 
 # Call the function
-addNumbers(5, 10)
+    addNumbers(5, 10)
 
 
 Limitations
@@ -110,7 +107,7 @@ No Nested Arrays: Arrays cannot contain other arrays as elements.
 
 This will not work:
 
-boxes nestedArray = [[1, 2], [3, 4]] end
+    boxes nestedArray = [[1, 2], [3, 4]] end
 No Else Blocks: InBoxes does not support else statements. You must use separate if statements to handle alternate logic.
 
 Limited Libraries: Currently, InBoxes supports only built-in functions like print() and input().
@@ -128,14 +125,14 @@ deno run --allow-read main.ts program.ibox
 Example Program: Hi-Lo Game
 # A simple Hi-Lo guessing game
 
-box target = 42 end
-box guess = 0 end
-box attempts = 0 end
+    box target = 42 end
+    box guess = 0 end
+    box attempts = 0 end
 
-print("Welcome to the Hi-Lo Game!")
-print("Guess the number between 1 and 100.")
+    print("Welcome to the Hi-Lo Game!")
+    print("Guess the number between 1 and 100.")
 
-while guess > target or guess < target doIt
+    while guess > target or guess < target doIt
     input("guess", "Enter your guess: ")
     attempts = attempts + 1 end
 
@@ -146,9 +143,9 @@ while guess > target or guess < target doIt
     if guess < target doIt
         print("Too low! Try again.")
     end
-end
+    end
 
-print("Congratulations! You guessed the number in ", attempts, " attempts.")
+    print("Congratulations! You guessed the number in ", attempts, " attempts.")
 
 
 Future Features
