@@ -1,27 +1,33 @@
+#InBoxes Programming Language
 
-Here’s an awesome README.md file for your coding language, InBoxes:
-
-InBoxes Programming Language
 InBoxes is a fun and innovative programming language designed to encapsulate all variables, logic, and operations inside a box. It’s simple, unique, and a great way to learn about language design while having fun! 🎉
+
+I made this after another student tried to literally write code down in english! so I gave the limited time of 5 days to myself in order to program the
+
+#InBoxes!!
+
+do you get it? everything "in" the box?
+yeah the joke is bad I know
 
 Features
 Core Features
-Easy-to-use syntax with keywords like box, boxes, if, ifNot, while, and more.
+Easy-to-use syntax with keywords like box, boxes, if, while, for, and more.
 Flexible Variables: Supports numbers, strings, arrays, and booleans.
 User Input: Use input() to dynamically update variable values at runtime.
 Print Statements: Print any variable, string, or number using print().
 Arithmetic Operations: Perform basic operations like addition, subtraction, multiplication, and division.
 Logical and Comparison Operators:
 Supported: and, or, >, <, >=, <=, ==, !=.
-Not Supported: Traditional not operators. Instead, use ifNot and whileNot for negated conditions.
+Not Supported: Traditional not operators. Instead, use reverse logic (I did not have time for that) ;)
 Control Flow:
-if, ifNot, and while statements.
-Custom negated control flow: ifNot and whileNot for negated logic.
+if, for and while statements.
 Arrays: Supports initialization, access, and assignment for arrays.
 Syntax and Usage
-Variable Declaration
-inboxes
-Copiar código
+Variable Declaration inboxes
+
+# Syntax Usage
+
+
 # Declare a variable
 box x = 10 end
 
@@ -35,7 +41,7 @@ boxes myArray = [1, 2, 3] end
 myArray[1] = 5 end
 print(myArray[1]) # Outputs: 5
 Control Flow
-if and ifNot Statements
+if Statements
 inboxes
 Copiar código
 box x = 5 end
@@ -45,11 +51,7 @@ if x > 0 doIt
     print("x is positive!")
 end
 
-# Negated if statement
-ifNot x > 10 doIt
-    print("x is not greater than 10!")
-end
-while and whileNot Loops
+while and for Loops
 inboxes
 Copiar código
 box counter = 0 end
@@ -60,18 +62,18 @@ while counter < 5 doIt
     counter = counter + 1 end
 end
 
-# Negated while loop
-whileNot counter > 10 doIt
-    print("Counter is less than or equal to 10")
-    counter = counter + 1 end
+# for Loop
+box x = 5 end
+
+for i = 0 to x doIt
+print(x)
 end
-User Input
-inboxes
-Copiar código
+
 # Input a value from the user
 box name = "" end
 input("name", "Enter your name: ")
 print("Hello, ", name, "!")
+
 Logical and Comparison Operators
 inboxes
 Copiar código
@@ -86,6 +88,7 @@ end
 Functions
 inboxes
 Copiar código
+
 # Define a function
 function addNumbers(a, b) doIt
     box result = a + b end
@@ -94,22 +97,19 @@ end
 
 # Call the function
 addNumbers(5, 10)
-Limitations
-While InBoxes is a fun and powerful language, it has some limitations:
 
-No not Operator: Instead of using not, you must use ifNot and whileNot for negated conditions.
+
+Limitations
+While InBoxes is a fun and entertaining language, it has some limitations due to the limited time I worked on it:
+
+No not Operators
 
 Example:
-inboxes
-Copiar código
-ifNot x > 10 doIt
-    print("x is not greater than 10.")
-end
+if != (doesnt work)
 No Nested Arrays: Arrays cannot contain other arrays as elements.
 
 This will not work:
-inboxes
-Copiar código
+
 boxes nestedArray = [[1, 2], [3, 4]] end
 No Else Blocks: InBoxes does not support else statements. You must use separate if statements to handle alternate logic.
 
@@ -122,11 +122,10 @@ Run Your Program
 Save your code in a file with the .ibox extension (e.g., program.ibox) and execute it as follows:
 
 bash
-Copiar código
 deno run --allow-read main.ts program.ibox
+
+
 Example Program: Hi-Lo Game
-inboxes
-Copiar código
 # A simple Hi-Lo guessing game
 
 box target = 42 end
@@ -150,13 +149,17 @@ while guess > target or guess < target doIt
 end
 
 print("Congratulations! You guessed the number in ", attempts, " attempts.")
+
+
 Future Features
 Support for nested arrays.
 Implementation of else statements for more flexible logic.
 Advanced I/O operations (e.g., file reading/writing).
 More built-in functions for string and array manipulation.
+
 Contributing
-This is a portfolio and fun project! If you want to contribute or provide feedback, feel free to reach out or fork the repository.
+This is a project made for fun and entertainement! if you want to help me in any way you can reach out on my linkedin!
+https://www.linkedin.com/in/lukas-vieira-a94a8332a/
 
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
