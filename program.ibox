@@ -1,5 +1,21 @@
-box x = 5 end
+box target equal 42 end
+box guess equal 0 end
+box attempts equal 0 end
 
-for i = 0 to x doIt
-print(x)
+print("Welcome to the Hi-Lo Game!")
+print("Guess the number between 1 and 100.")
+
+while guess greaterThan target or guess lessThan target doIt
+input("guess", "Enter your guess: ")
+attempts equal attempts + 1 end
+
+if guess greaterThan target doIt
+    print("Too high! Try again.")
 end
+
+if guess lessThan target doIt
+    print("Too low! Try again.")
+end
+end
+
+print("Congratulations! You guessed the number in ", attempts, " attempts.")
