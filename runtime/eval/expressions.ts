@@ -366,16 +366,22 @@ export function eval_comparison_expr(expr: ComparisonExpression, env: Environmen
 
     switch (expr.operator) {
 		case ">":
+        case "greaterThan":
 			return { type: "boolean", value: (left.value ?? 0) > (right.value ?? 0), env };
 		case "<":
+        case "lessThan":
 			return { type: "boolean", value: (left.value ?? 0) < (right.value ?? 0), env };
 		case ">=":
+        case "greaterThanOrEqual":
 			return { type: "boolean", value: (left.value ?? 0) >= (right.value ?? 0), env };
 		case "<=":
+        case "lessThanOrEqual":
 			return { type: "boolean", value: (left.value ?? 0) <= (right.value ?? 0), env };
 		case "==":
+        case "equals":
 			return { type: "boolean", value: (left.value ?? 0) === (right.value ?? 0), env };
 		case "!=":
+        case "notEqual":
 			return { type: "boolean", value: (left.value ?? 0) !== (right.value ?? 0), env };
         default:
             throw new Error(`Unsupported comparison operator '${expr.operator}'`);
