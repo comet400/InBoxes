@@ -1,0 +1,5 @@
+box x = 5 end
+
+for i = 0 to x doIt
+print(x)
+end
