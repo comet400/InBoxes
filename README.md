@@ -112,14 +112,16 @@ No Else Blocks: InBoxes does not support else statements. You must use separate 
 
 Limited Libraries: Currently, InBoxes supports only built-in functions like print() and input().
 
-How to Run InBoxes Programs
+#How to Run InBoxes Programs
 Prerequisites
-Install Deno: https://deno.land
+You might need to Install Deno: https://deno.land
+Dowload only the inbox.exe
 Run Your Program
 Save your code in a file with the .ibox extension (e.g., program.ibox) and execute it as follows:
 
 bash
-deno run --allow-read main.ts program.ibox
+
+    .\inbox.exe program.ibox
 
 
 Example Program: Hi-Lo Game
