@@ -1,10 +1,10 @@
-#InBoxes Programming Language
+# InBoxes Programming Language
 
 InBoxes is a fun and innovative programming language designed to encapsulate all variables, logic, and operations inside a box. It’s simple, unique, and a great way to learn about language design while having fun! 🎉
 
 I made this after another student tried to literally write code down in english! so I gave the limited time of 5 days to myself in order to program the
 
-#InBoxes!!
+# InBoxes!!
 
 do you get it? everything "in" the box?
 yeah the joke is bad I know
