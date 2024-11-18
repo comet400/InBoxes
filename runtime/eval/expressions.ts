@@ -336,21 +336,31 @@ export function eval_array_access(node: ArrayAccess, env: Environment): RuntimeV
 export function eval_logical_expr(expr: LogicalExpression, env: Environment): RuntimeVal {
     const left = evaluate(expr.left, env);
 
-    // Ensure the left operand is a boolean
+    // Ensure the left operand is a boolean for all logical operators
     if (left.type !== "boolean") {
-        throw new Error("Logical operations require boolean operands.");
+        throw new Error(`Logical operations require boolean operands, but got '${left.type}'.`);
     }
 
-    // Lazily evaluate the right operand
-    const right = () => evaluate(expr.right, env);
-
     switch (expr.operator) {
-        case "and":
-			return { type: "boolean", value: left.value && right().value, env };
-        case "or":
-			return { type: "boolean", value: left.value || right().value, env };
+        case "and": {
+            const right = evaluate(expr.right!, env); // Ensure right operand exists for 'and'
+            if (right.type !== "boolean") {
+                throw new Error(`Logical 'and' requires boolean operands, but got '${right.type}'.`);
+            }
+            return { type: "boolean", value: left.value && right.value };
+        }
+        case "or": {
+            const right = evaluate(expr.right!, env); // Ensure right operand exists for 'or'
+            if (right.type !== "boolean") {
+                throw new Error(`Logical 'or' requires boolean operands, but got '${right.type}'.`);
+            }
+            return { type: "boolean", value: left.value || right.value };
+        }
+        case "not": {
+            return { type: "boolean", value: !left.value }; // Unary operation
+        }
         default:
-            throw new Error(`Unsupported logical operator '${expr.operator}'`);
+            throw new Error(`Unsupported logical operator '${expr.operator}'.`);
     }
 }
 

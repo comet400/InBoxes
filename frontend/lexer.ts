@@ -91,8 +91,6 @@ const MyKEYWORDS: Record<string, TokenType> = {
     ifNot: TokenType.IfNot,
     whileNot: TokenType.WhileNot,
   };
-  
-  
 
   
   export interface Token {
@@ -112,7 +110,7 @@ const MyKEYWORDS: Record<string, TokenType> = {
 	["=", TokenType.Equals],
 	["\"", TokenType.StringC],
 	[",", TokenType.Comma],
-	["!", TokenType.NotEquals],
+	["!=", TokenType.NotEquals],
 	["[", TokenType.OpenArray],
 	["]", TokenType.CloseArray],
 	["<", TokenType.LessThan],
@@ -235,6 +233,10 @@ const MyKEYWORDS: Record<string, TokenType> = {
 
         else if (sourceCode.slice(position, position + 2) === "==") {
             tokens.push(token("==", TokenType.EqualsEquals)); // Add the '==' token
+            position += 2; // Advance by 2 characters
+        }
+        else if (sourceCode.slice(position, position + 2) === "!=") {
+            tokens.push(token("!=", TokenType.NotEquals)); // Add the '!=' token
             position += 2; // Advance by 2 characters
         } 
         else if (validOperators.has(char)) { // Handle operators

@@ -1,21 +1,25 @@
-box target equal 42 end
-box guess equal 0 end
-box attempts equal 0 end
 
-print("Welcome to the Hi-Lo Game!")
-print("Guess the number between 1 and 100.")
+function hiLo(guess, target) do
+    box attempts equal 0 end
+    print("Welcome to the Hi-Lo Game!")
+    print("Guess the number between 1 and 100.")
 
-while guess greaterThan target or guess lessThan target do
-input("guess", "Enter your guess: ")
-attempts equal attempts add 1 end
+    whileNot guess == target do
+    input("guess", "Enter your guess: ")
+    attempts equal attempts add 1 end
 
-if guess greaterThan target do
-    print("Too high! Try again.")
-end
+        if guess greaterThan target do
+        print("Too high! Try again.")
+        end
 
-if guess lessThan target do
-    print("Too low! Try again.")
-end
-end
-
+        if guess lessThan target do
+        print("Too low! Try again.")
+        end
+    end
 print("Congratulations! You guessed the number in ", attempts, " attempts.")
+end
+
+box target equal 42 end
+
+hiLo(0, target)
+

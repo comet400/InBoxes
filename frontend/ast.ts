@@ -116,7 +116,7 @@ export interface BlockStatement extends Stmt {
 /** Represents an if statement */
 export interface IfStatement extends Stmt {
   kind: "IfStatement";
-  test: Expression;       // Condition expression
+  test: Expression;           // Condition expression
   consequent: BlockStatement; // Code to execute if the condition is true
   alternate?: BlockStatement; // Optional else block
 }
