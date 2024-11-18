@@ -334,35 +334,47 @@ export function eval_array_access(node: ArrayAccess, env: Environment): RuntimeV
 	
 }
 export function eval_logical_expr(expr: LogicalExpression, env: Environment): RuntimeVal {
+    // Evaluate the left operand
     const left = evaluate(expr.left, env);
 
-    // Ensure the left operand is a boolean for all logical operators
+    // Validate the left operand as a boolean
     if (left.type !== "boolean") {
         throw new Error(`Logical operations require boolean operands, but got '${left.type}'.`);
     }
 
+    // Handle logical operators
     switch (expr.operator) {
         case "and": {
-            const right = evaluate(expr.right!, env); // Ensure right operand exists for 'and'
+            // Short-circuit evaluation for `and`
+            if (!left.value) {
+                return { type: "boolean", value: false, env };
+            }
+            const right = evaluate(expr.right!, env); // Evaluate the right operand
             if (right.type !== "boolean") {
                 throw new Error(`Logical 'and' requires boolean operands, but got '${right.type}'.`);
             }
-            return { type: "boolean", value: left.value && right.value };
+            return { type: "boolean", value: left.value && right.value, env };
         }
         case "or": {
-            const right = evaluate(expr.right!, env); // Ensure right operand exists for 'or'
+            // Short-circuit evaluation for `or`
+            if (left.value) {
+                return { type: "boolean", value: true, env };
+            }
+            const right = evaluate(expr.right!, env); // Evaluate the right operand
             if (right.type !== "boolean") {
                 throw new Error(`Logical 'or' requires boolean operands, but got '${right.type}'.`);
             }
-            return { type: "boolean", value: left.value || right.value };
+            return { type: "boolean", value: left.value || right.value, env };
         }
         case "not": {
-            return { type: "boolean", value: !left.value }; // Unary operation
+            // Unary `not` operation
+            return { type: "boolean", value: !left.value, env };
         }
         default:
             throw new Error(`Unsupported logical operator '${expr.operator}'.`);
     }
 }
+
 
 
 // Evaluate a comparison expression
