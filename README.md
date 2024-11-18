@@ -27,6 +27,27 @@ Variable Declaration inboxes
 
 # Syntax Usage
 
+# English Operators?
+yes thats right, in InBoxes, english is supported too.
+
+# the following working operators are:
+equal: =
+equals: ==
+greaterThan: >
+smallerThan: <
+greaterThanOrEquals: >=
+smallerThanOrEquals: <=
+add: +
+subtract: -
+multiply: *
+divide: /
+
+# future working operators (not implemented yet but exists):
+ifNot
+whileNot
+
+It's an option, you can still type just as normal instead of adding this feature, however its very fun and entertaining to program without them, here we only think inside the box after all we dont know what * means haha!
+
 
 # Declare a variable
 box x = 10 end
