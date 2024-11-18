@@ -31,7 +31,7 @@ export enum TokenType {
 	// Keywords
 	Box,              // Represents the 'box' keyword
 	NoChange,         // Represents the 'noChange' keyword
-	DoIt,             // Represents the 'doIt' keyword
+	Do,             // Represents the 'doIt' keyword
 	End,              // Represents the 'end' keyword
 	Comma,            // Represents the ',' token
 	Boxes,			  // Represents the 'boxes' keyword
@@ -63,7 +63,7 @@ const MyKEYWORDS: Record<string, TokenType> = {
 	box: TokenType.Box,
 	boxes: TokenType.Boxes,
 	noChange: TokenType.NoChange,
-	doIt: TokenType.DoIt,
+	do: TokenType.Do,
 	end: TokenType.End,
 	true: TokenType.BooleanLiteral,
 	false: TokenType.BooleanLiteral,

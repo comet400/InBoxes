@@ -5,15 +5,15 @@ box attempts equal 0 end
 print("Welcome to the Hi-Lo Game!")
 print("Guess the number between 1 and 100.")
 
-while guess greaterThan target or guess lessThan target doIt
+while guess greaterThan target or guess lessThan target do
 input("guess", "Enter your guess: ")
-attempts equal attempts + 1 end
+attempts equal attempts add 1 end
 
-if guess greaterThan target doIt
+if guess greaterThan target do
     print("Too high! Try again.")
 end
 
-if guess lessThan target doIt
+if guess lessThan target do
     print("Too low! Try again.")
 end
 end

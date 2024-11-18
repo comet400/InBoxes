@@ -230,7 +230,7 @@ private parseLogicalExpr(): Expression {
         } as LogicalExpression;
     }
 
-    this.consume(TokenType.DoIt, "Expected 'doIt' after condition");
+    this.consume(TokenType.Do, "Expected 'do' after condition");
 
     const consequent: BlockStatement = { kind: "BlockStatement", body: [] };
 
@@ -255,7 +255,7 @@ private parseLogicalExpr(): Expression {
     this.consume(TokenType.To, "Expected 'to' keyword");
     const endExpr = this.parseExpr();
 
-    this.consume(TokenType.DoIt, "Expected 'doIt' keyword");
+    this.consume(TokenType.Do, "Expected 'do' keyword");
 
     const body: Stmt[] = [];
     while (!this.check(TokenType.End)) {
@@ -290,7 +290,7 @@ private parseLogicalExpr(): Expression {
         } as LogicalExpression;
     }
 
-    this.consume(TokenType.DoIt, "Expected 'doIt' after while condition");
+    this.consume(TokenType.Do, "Expected 'do' after while condition");
 
     const body: BlockStatement = { kind: "BlockStatement", body: [] };
 
@@ -475,7 +475,7 @@ private parseArrayAccess(arrayName: string): ArrayAccess {
     }
     this.consume(TokenType.EndParameters, "Expected ')' after function parameters");
 
-    this.consume(TokenType.DoIt, "Expected 'doIt' after function signature");
+    this.consume(TokenType.Do, "Expected 'do' after function signature");
 
     const body: BlockStatement = { kind: "BlockStatement", body: [] };
     while (!this.check(TokenType.End)) {
