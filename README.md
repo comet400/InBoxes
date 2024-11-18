@@ -2,7 +2,7 @@
 
 InBoxes is a fun and innovative programming language designed to encapsulate all variables, logic, and operations inside a box. It’s simple, unique, and a great way to learn about language design while having fun! 🎉
 
-I made this after another student tried to literally write code down in english! so I gave the limited time of 5 days to myself in order to program the
+I made this after another student tried to literally write code down in english! so I gave the limited time of 5 days to myself in order to program the...
 
 # InBoxes!!
 
@@ -18,9 +18,10 @@ Print Statements: Print any variable, string, or number using print().
 Arithmetic Operations: Perform basic operations like addition, subtraction, multiplication, and division.
 Logical and Comparison Operators:
 Supported: and, or, >, <, >=, <=, ==, !=.
-Not Supported: Traditional not operators. Instead, use reverse logic (I did not have time for that) ;)
+English Version: add, subtract, greaterThan, lessThan, lessThanOrEquals, greaterThanOrEquals, equals, notEqual
+
 Control Flow:
-if, for and while statements.
+if, for while, ifNot and whileNot logic.
 Arrays: Supports initialization, access, and assignment for arrays.
 Syntax and Usage
 Variable Declaration inboxes
@@ -64,7 +65,7 @@ boxes myArray = [1, 2, 3] end
 
 if Statements
 # Normal if statement
-    if x > 0 doIt
+    if x > 0 do
     print("x is positive!")
     end
 
@@ -83,7 +84,7 @@ if Statements
 # for Loop
     box x = 5 end
 
-    for i = 0 to x doIt
+    for i = 0 to x do
     print(x)
     end
 
@@ -96,7 +97,7 @@ if Statements
 
 Logical and Comparison Operators
 # Logical operators
-    if x > 5 and x < 10 doIt
+    if x > 5 and x < 10 do
         print("x is between 5 and 10.")
     end
 
@@ -108,7 +109,7 @@ Logical and Comparison Operators
 Functions
 
 # Define a function
-    function addNumbers(a, b) doIt
+    function addNumbers(a, b) do
         box result = a + b end
         print(result)
     end
@@ -117,14 +118,17 @@ Functions
     addNumbers(5, 10)
 
 
-Limitations
-While InBoxes is a fun and entertaining language, it has some limitations due to the limited time I worked on it:
-
-No not Operators
+# Not Operators!
+now in InBoxes we have our brand new operators ifNot and whileNot, which literally has the function to switch any kind of boolean flag you might have.
+We also support != operators now!
 
 Example:
-if != (doesnt work)
+if != (now it works!)
+
+# Limitations
+While InBoxes is a fun and entertaining language, it has some limitations due to the limited time I worked on it:
 No Nested Arrays: Arrays cannot contain other arrays as elements.
+Every variable is global! yes, thats the worst fear of a programmer and I will work hard to change that in future patches and updates
 
 This will not work:
 
@@ -147,28 +151,29 @@ bash
 
 Example Program: Hi-Lo Game
 # A simple Hi-Lo guessing game
-
-    box target = 42 end
-    box guess = 0 end
-    box attempts = 0 end
-
-    print("Welcome to the Hi-Lo Game!")
-    print("Guess the number between 1 and 100.")
-
-    while guess > target or guess < target doIt
-    input("guess", "Enter your guess: ")
-    attempts = attempts + 1 end
-
-    if guess > target doIt
-        print("Too high! Try again.")
-    end
-
-    if guess < target doIt
-        print("Too low! Try again.")
-    end
-    end
-
+    function hiLo(guess, target) do
+        box attempts equal 0 end
+        print("Welcome to the Hi-Lo Game!")
+        print("Guess the number between 1 and 100.")
+    
+        whileNot guess == target do
+        input("guess", "Enter your guess: ")
+        attempts equal attempts add 1 end
+    
+            if guess greaterThan target do
+            print("Too high! Try again.")
+            end
+    
+            if guess lessThan target do
+            print("Too low! Try again.")
+            end
+        end
     print("Congratulations! You guessed the number in ", attempts, " attempts.")
+    end
+    
+    box target equal 42 end
+    
+    hiLo(0, target)
 
 
 Future Features
@@ -176,12 +181,17 @@ Support for nested arrays.
 Implementation of else statements for more flexible logic.
 Advanced I/O operations (e.g., file reading/writing).
 More built-in functions for string and array manipulation.
+Pointers!!!
+Modular operators
+Local initializations
+Funtion Prototypes
+AND MORE!
 
 Contributing
 This is a project made for fun and entertainement! if you want to help me in any way you can reach out on my linkedin!
 https://www.linkedin.com/in/lukas-vieira-a94a8332a/
 
 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under a custom MIT License. See the LICENSE file for details.
 
 Enjoy programming with InBoxes and think inside the box! 📦
