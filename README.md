@@ -177,7 +177,6 @@ Example Program: Hi-Lo Game
 
 
 Future Features
-Support for nested arrays.
 Implementation of else statements for more flexible logic.
 Advanced I/O operations (e.g., file reading/writing).
 More built-in functions for string and array manipulation.
