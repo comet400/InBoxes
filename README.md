@@ -75,7 +75,7 @@ if Statements
     box counter = 0 end
 
 # Normal while loop
-    while counter < 5 doIt
+    while counter < 5 do
         print(counter)
         counter = counter + 1 end
     end
@@ -137,7 +137,7 @@ No Else Blocks: InBoxes does not support else statements. You must use separate 
 
 Limited Libraries: Currently, InBoxes supports only built-in functions like print() and input().
 
-#How to Run InBoxes Programs
+# How to Run InBoxes Programs
 Prerequisites
 You might need to Install Deno: https://deno.land
 Dowload only the inbox.exe
